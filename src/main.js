@@ -1,6 +1,6 @@
 class Main {
   constructor() {
-    console.log('Really done!');
+    console.log('Really, really done!');
   }
 }
 
