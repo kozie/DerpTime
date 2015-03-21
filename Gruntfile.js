@@ -30,5 +30,7 @@ module.exports = function(grunt) {
     }
 	});
 
-	grunt.registerTask("default", ["browserify", "connect", "watch"]);
+	grunt.registerTask("build", ["browserify"]);
+	grunt.registerTask("default", ["build"]);
+	grunt.registerTask("go", ["build", "connect", "watch"]);
 };
