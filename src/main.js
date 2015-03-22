@@ -1,6 +1,8 @@
+import Game from "./Game";
+
 class Main {
   constructor() {
-    console.log('Really, really done!');
+    new Game();
   }
 }
 
