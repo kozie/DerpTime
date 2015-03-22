@@ -1,5 +1,14 @@
 language: node_js
 node_js:
   - "0.10"
-  - "0.12"
-  - "iojs"
+
+install:
+  - npm install grunt-cli
+  - npm install
+
+cache:
+  directories:
+  - node_modules
+
+script:
+  - ./node_modules/.bin/grunt travis

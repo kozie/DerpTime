@@ -28,9 +28,16 @@ module.exports = function(grunt) {
         }
       }
     }
+		// karma: {
+	  //   unit: {
+    //     configFile: '<%= files.testConf %>',
+    //     singleRun: true
+	  //   }
+	  // }
 	});
 
 	grunt.registerTask("build", ["browserify"]);
+	grunt.registerTask("debug", ["build", "connect", "watch"]);
+	grunt.registerTask("travis", ["build"])
 	grunt.registerTask("default", ["build"]);
-	grunt.registerTask("go", ["build", "connect", "watch"]);
 };
