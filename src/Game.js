@@ -4,12 +4,14 @@ export default class Game {
   constructor() {
     this._ready = false;
     this._running = false;
+    this._lastDelta = 0;
 
     this.init();
   }
 
   init() {
     this.display = new Display();
+    
     this._ready = true;
     this.loop();
   }
@@ -22,18 +24,37 @@ export default class Game {
       }
 
       requestAnimationFrame(d => {
+        let delta = d - this._lastDelta;
+        this._lastDelta = d;
+
         if (this._running === false) {
           this._running = true;
         }
 
-        this.delta = d;
+        this.delta = delta;
         this.loop();
       });
     }
   }
 
   update(delta) {
-    console.log(`Running at ${delta}`);
+    if (this.timePassed === undefined) {
+      this.timePassed = 0;
+    }
+
+    if (this.fps === undefined) {
+      this.fps = 0;
+    }
+
+    this.timePassed += delta;
+    this.fps += 1;
+
+    // FPS report
+    if (this.timePassed / 1000 >= 1) {
+      console.log(`FPS ${this.fps}`);
+      this.timePassed = 0;
+      this.fps = 0;
+    }
   }
 
   draw() {

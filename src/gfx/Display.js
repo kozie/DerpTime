@@ -32,9 +32,9 @@ export default class Display {
     this.element.height = this.height;
   }
 
-  setDimension(width, height) {
-    this.element.width = width;
-    this.element.height = height;
+  resize(width, height) {
+    this.width = width;
+    this.height = height;
 
     this.clear();
   }
