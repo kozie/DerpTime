@@ -1,6 +1,6 @@
 import Display from "./gfx/Display";
 
-export default class Game {
+class Game {
   constructor() {
     this._ready = false;
     this._running = false;
@@ -69,3 +69,5 @@ export default class Game {
     this._delta = value;
   }
 }
+
+export default Game;

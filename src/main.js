@@ -1,8 +1,10 @@
-import Game from "./Game";
+import Scene from './Scene';
+// import Game from "./Game";
 
 class Main {
   constructor() {
-    new Game();
+    // new Game();
+		new Scene();
   }
 }
 

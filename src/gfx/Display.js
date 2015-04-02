@@ -1,4 +1,4 @@
-export default class Display {
+class Display {
   constructor(width = 800, height = 600, fullscreen = false) {
     this.width = width;
     this.height = height;
@@ -43,3 +43,5 @@ export default class Display {
     console.log('Not implemented');
   }
 }
+
+export default Display;
